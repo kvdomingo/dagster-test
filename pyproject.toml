@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "dagster-test"
+version = "0.1.0"
+description = ""
+authors = ["Kenneth V. Domingo <hello@kvd.studio>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4.0"
+dagster = "^1.3.14"
+dagit = "^1.3.14"
+pandas = "^2.0.3"
+requests = "^2.31.0"
+matplotlib = "^3.7.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.dagster]
+module_name = "dagster_test"
+
+[tool.black]
+target-versions = ["py38", "py39", "py310"]

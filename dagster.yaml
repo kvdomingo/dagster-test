@@ -1,0 +1,21 @@
+telemetry:
+  enabled: false
+
+storage:
+  sqlite:
+    base_dir: ./db.sqlite3
+
+local_artifact_storage:
+  module: dagster.core.storage.root
+  class: LocalArtifactStorage
+  config:
+    base_dir: ./artifacts
+
+retention:
+  schedule:
+    purge_after_days: 30
+  sensor:
+    purge_after_days:
+      skipped: 7
+      failure: 30
+      success: -1
